@@ -1,0 +1,3 @@
+export const GET_CATEGORIES = 'GET_CATEGORIES';
+export const LOAD_JOKE = 'LOAD_JOKE';
+export const GET_MORE_CATEGORIES = 'GET_MORE_CATEGORIES';
