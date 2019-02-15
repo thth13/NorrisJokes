@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { getRandJoke, getJoke } from '../actions/actions';
 
@@ -32,6 +33,11 @@ class Jokes extends Component {
 		);
 	}
 }
+
+Jokes.propTypes = {
+	joke: PropTypes.string,
+	category: PropTypes.string
+};
 
 const mapStateToProps = state => ({
 	joke: state.joke.value,

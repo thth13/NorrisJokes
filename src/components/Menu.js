@@ -1,19 +1,22 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+
+
 import { getCategories, getJoke } from '../actions/actions';
 
 class Menu extends Component {
 	state = {
 		items: 10
-	};
+	}
 
 	componentDidMount() {
 		this.props.getCategories();
-	};
+	}
 
 	getJoke = (category) => {
        	this.props.getJoke(category);
-    };
+    }
 
     loadMore = () => {
     	if (this.state.items <= 10) {
@@ -21,7 +24,7 @@ class Menu extends Component {
     	} else {
     		this.setState({items: 10});
     	}
-    };
+    }
 
 	render() {
 		const { categories } = this.props; 
@@ -45,6 +48,10 @@ class Menu extends Component {
 		);
 	}
 }
+
+Menu.propTypes = {
+	categories: PropTypes.array.isRequired
+};
 
 const mapStateToProps = state => ({
 	categories: state.categories
